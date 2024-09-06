@@ -1,0 +1,97 @@
+package dungeonmania.goals;
+
+import dungeonmania.Game;
+
+public interface Goal {
+    // private String type;
+    // private int target;
+    // private Goal goal1;
+    // private Goal goal2;
+
+    // public Goal(String type) {
+    // this.type = type;
+    // }
+
+    // public Goal(String type, int target) {
+    // this.type = type;
+    // this.target = target;
+    // }
+
+    // public Goal(String type, Goal goal1, Goal goal2) {
+    // this.type = type;
+    // this.goal1 = goal1;
+    // this.goal2 = goal2;
+    // }
+
+    /**
+     * @return true if the goal has been achieved, false otherwise
+     */
+    public boolean achieved(Game game);
+    // {
+    // if (game.getPlayer() == null)
+    // return false;
+    // switch (type) {
+    // case "exit":
+    // Player character = game.getPlayer();
+    // Position pos = character.getPosition();
+    // List<Exit> es = game.getExitFromMap();
+    // if (es == null || es.size() == 0)
+    // return false;
+    // return es.stream().map(Entity::getPosition).anyMatch(pos::equals);
+    // case "boulders":
+    // return game.getSwitchFromMap().stream().allMatch(s -> s.isActivated());
+    // case "treasure":
+    // return game.getCollectedTreasureCount() >= target;
+    // case "AND":
+    // return goal1.achieved(game) && goal2.achieved(game);
+    // case "OR":
+    // return goal1.achieved(game) || goal2.achieved(game);
+    // case "enemies":
+    // int target = this.target;
+    // int numCurrentEnemy = game.getEntityType(Enemy.class).size();
+    // int numInitialEnemy = game.getNumInitialEnemies();
+    // return (numInitialEnemy - numCurrentEnemy >= target)
+    // && game.getEntityType(ZombieToastSpawner.class).isEmpty();
+    // default:
+    // break;
+    // }
+    // return false;
+    // }
+
+    public String toString(Game game);
+    // {
+    // // System.out.println(this.achieved(game));
+
+    // if (this.achieved(game))
+    // return "";
+    // switch (type) {
+    // case "exit":
+    // return ":exit";
+    // case "boulders":
+    // return ":boulders";
+    // case "treasure":
+    // return ":treasure";
+    // case "AND":
+    // if (goal1.toString(game).equals("") && goal2.toString(game).equals("")) {
+    // return "";
+    // } else if (!goal1.toString(game).equals("") &&
+    // goal2.toString(game).equals("")) {
+    // return "( AND " + goal1.toString(game) + ")";
+    // } else if (goal1.toString(game).equals("") &&
+    // !goal2.toString(game).equals("")) {
+    // return "( AND " + goal2.toString(game) + ")";
+    // } else {
+    // return "(" + goal1.toString(game) + " AND " + goal2.toString(game) + ")";
+    // }
+    // case "OR":
+    // if (achieved(game)) {
+    // return "";
+    // } else
+    // return "(" + goal1.toString(game) + " OR " + goal2.toString(game) + ")";
+    // case "enemies":
+    // return ":enemies";
+    // default:
+    // return "";
+    // }
+    // }
+}
